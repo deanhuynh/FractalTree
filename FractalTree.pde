@@ -11,9 +11,19 @@ public void draw()
 	background(0);   
 	stroke(0,255,0);   
 	line(320,480,320,380);   
-	//drawBranches(??,??,??,??);  //will add later 
+	drawBranches(320, 380, 100, branchAngle);  //will add later 
 } 
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
-	//your code here    
+	if(branchLength <= smallestBranch)
+	{
+
+	}
+	else
+	{
+		line(x, y, x + (int)(branchLength * Math.cos(angle)), y - (int)(branchLength * Math.sin(angle)));
+		line(x, y, x - (int)(branchLength * Math.cos(angle)), y - (int)(branchLength * Math.sin(angle)));
+		drawBranches(x + (int)(branchLength * Math.cos(angle)), y - (int)(branchLength * Math.sin(angle)), branchLength * fractionLength, angle * 1.3);
+		drawBranches(x - (int)(branchLength * Math.cos(angle)), y - (int)(branchLength * Math.sin(angle)), branchLength * fractionLength, angle * 1.3);
+	}
 } 
