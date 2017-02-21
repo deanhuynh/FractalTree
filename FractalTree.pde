@@ -1,6 +1,6 @@
 private double fractionLength = .8; 
 private int smallestBranch = 10; 
-private double branchAngle = .2;  
+private double branchAngle = .4;  
 public void setup() 
 {   
 	size(640,480);    
@@ -8,8 +8,8 @@ public void setup()
 } 
 public void draw() 
 {   
-	background(0);   
-	stroke(0,255,0);   
+	background(135, 206, 250);   
+	stroke(34, 139, 34);   
 	line(320,480,320,380);   
 	drawBranches(320, 380, 100, branchAngle);  //will add later 
 } 
